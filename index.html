@@ -108,25 +108,54 @@
 								<input type="checkbox" name="a" class="myCheckbox">sim or esim<br>
 								<input type="checkbox" name="a" class="myCheckbox">行李<br> 
                                 -->
-                                <label >
-                                    <input type="checkbox" class="myCheckbox">護照
-                                </label>
-                                <label >
-                                    <input type="checkbox" class="myCheckbox">保險
-                                </label>
-                                <label >
-                                    <input type="checkbox" class="myCheckbox">景點門票
-                                </label>
-                                <label >
-                                    <input type="checkbox" class="myCheckbox">日幣
-                                </label>
-                                <label >
-                                    <input type="checkbox" class="myCheckbox">sim or esim
-                                </label>
-                                <label >
-                                    <input type="checkbox" class="myCheckbox">行李(衣物、必需品、藥物)
-                                </label>
-							</header>
+                                <form id="myForm">
+                                    <label><input type="checkbox" name="pref" value="item1" class="myCheckbox"> 護照</label><br>
+                                    <label><input type="checkbox" name="pref" value="item2" class="myCheckbox"> 保險</label><br>
+                                    <label><input type="checkbox" name="pref" value="item3" class="myCheckbox"> 景點門票</label><br>
+                                    <label><input type="checkbox" name="pref" value="item4" class="myCheckbox"> 日幣</label><br>
+                                    <label><input type="checkbox" name="pref" value="item5" class="myCheckbox"> sim or esim</label><br>
+                                    <label><input type="checkbox" name="pref" value="item6" class="myCheckbox"> 行李(衣物、必需品、藥物)</label><br>
+                                </form>
+
+
+                                <script>
+                                    const checkboxes = document.querySelectorAll('input[name="pref"]');
+                                    const STORAGE_KEY = 'myCheckboxesState';
+
+
+                                    // 1. 網頁載入時：讀取並恢復狀態
+                                    const savedData = localStorage.getItem(STORAGE_KEY);
+
+                                    if (savedData !== null) {
+                                        const stateObj = JSON.parse(savedData);
+
+                                        checkboxes.forEach(cb => {
+                                            // 如果物件中有對應的值，就設為該布林值
+                                            if (stateObj[cb.value] !== undefined) {
+                                                cb.checked = stateObj[cb.value];
+                                            }
+                                        });
+                                    }
+
+
+                                    // 2. 當任何一個 checkbox 改變時：收集全部狀態並儲存
+                                    checkboxes.forEach(cb => {
+                                        cb.addEventListener('change', () => {
+                                            const stateObj = {};
+                                            checkboxes.dirEach ? null : checkboxes.forEach(item => {
+                                                stateObj[item.value] = item.checked;
+                                            });
+
+                                            // 也可以用更簡潔的寫法：
+                                            checkboxes.forEach(item => {
+                                                stateObj[item.value] = item.checked;
+                                            });
+                                            localStorage.setItem(STORAGE_KEY, JSON.stringify(stateObj));
+                                        });
+
+                                    });
+                                </script>
+				            </header>
 							<!--
 							<ul class="icons major">
 								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
