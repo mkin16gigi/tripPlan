@@ -21,6 +21,20 @@
     		z-index: 1 !important;
     		position: relative !important;
     		margin-right: 0.5em !important;
+
+        
+            /* 當 checkbox 被勾選時的樣式（可選，讓勾選時有打勾或變色效果） */
+            .myCheckbox:checked {
+                background-color: #007bff !important;
+                border-color: #007bff !important;
+            }
+
+            /* 當 checkbox 被勾選時，改變其後方 label 的文字顏色 */
+            .myCheckbox:checked + span, /* 如果文字有包 span */
+            .myCheckbox:checked ~ label { /* 或透過父層/同層選擇器調整 */
+                color: #007bff !important;
+            }
+            
 		}
 	</style>
 	<body class="landing is-preload">
@@ -38,10 +52,17 @@
 									<div id="menu">
 										<ul>
 											<li><a href="index.html">Home</a></li>
+											<li><a href="day1.html">Day1(Mon.)(11/16)</a></li>
+											<li><a href="day2.html">Day2(Tue.)(11/17)</a></li>
+											<li><a href="day3.html">Day3(Wen.)(11/18)</a></li>
+											<li><a href="day4.html">Day4(Thu.)(11/19)</a></li>
+											<li><a href="day5.html">Day5(Fri.)(11/20)</a></li>
+											<li><a href="day6.html">Day6(Sat.)(11/21)</a></li>
+											<li><a href="day7.html">Day7(Son.)(11/22)</a></li>
+											<li><a href="day8.html">Day8(Mon.)(11/23)</a></li>
+											<!--
 											<li><a href="generic.html">Generic</a></li>
 											<li><a href="elements.html">Elements</a></li>
-											<li><a href="day1.html">Day1(Mon.)(11/16)</a></li>
-											<!--
 											<li><a href="#">Sign Up</a></li>
 											<li><a href="#">Log In</a></li>
 										    -->
@@ -73,12 +94,38 @@
 						<div class="inner">
 							<header class="major">
 								<h2 >行前準備</h2> <br>
+								<!--
+								<ul>
+									<li>護照</li>
+									<li>保險</li>
+									<li>日幣</li>
+									<li>sim or esim</li>
+									<li>行李(衣物、必需品、藥物</li>
+								</ul>
 								<input type="checkbox" name="a" class="myCheckbox">護照<br>
 								<input type="checkbox" name="a" class="myCheckbox">保險<br>
 								<input type="checkbox" name="a" class="myCheckbox">日幣<br>
 								<input type="checkbox" name="a" class="myCheckbox">sim or esim<br>
 								<input type="checkbox" name="a" class="myCheckbox">行李<br> 
-
+                                -->
+                                <label >
+                                    <input type="checkbox" class="myCheckbox">護照
+                                </label>
+                                <label >
+                                    <input type="checkbox" class="myCheckbox">保險
+                                </label>
+                                <label >
+                                    <input type="checkbox" class="myCheckbox">景點門票
+                                </label>
+                                <label >
+                                    <input type="checkbox" class="myCheckbox">日幣
+                                </label>
+                                <label >
+                                    <input type="checkbox" class="myCheckbox">sim or esim
+                                </label>
+                                <label >
+                                    <input type="checkbox" class="myCheckbox">行李(衣物、必需品、藥物)
+                                </label>
 							</header>
 							<!--
 							<ul class="icons major">
@@ -91,32 +138,88 @@
 					</section>
 
 				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
+					<section id="two" class="wrapper alt style2" >
 						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							<!--
+							<div class="image"><img src="images/pic01.jpg" alt="" /></div>
+						    -->
+							<div class="content">
+								<h2>行程全覽</h2>
+								<h3>Day1</h3>
+                                    <ul>
+                                      <li> 台灣時間06:00上第一班捷運</li>
+                                      <li> 日本時間 12:25 落地 機場</li>
+                                      <li> 松原民宿checkin</li>
+									  <li> 榮商圈(久屋大通公園/名古屋電視塔/綠洲21)</li>
+								    </ul>
+								<section class="wrapper style3 special">
+								<h3>Day2</h3>
+                                    <ul>
+                                      <li> 松原民宿</li>
+                                      <li> 樂高樂園</li>
+                                      <li> 名古屋車站商圈</li>
+								    </ul>
+								</section>
+								<h3>Day3</h3>
+                                    <ul>
+                                      <li> 松原民宿</li>
+                                      <li> 大須觀音古董市集(觀音緣日)</li>
+                                      <li> 大須商店街(萬松寺演出:)</li>
+									  <ul>
+										<li>白龍-演出時間: 11:00/13:00/15:00</li>
+										<li>信長-演出時間: 10:00/12:00/14:00</li>
+									  </ul>
+									  <li> 榮商圈</li>
+								    </ul>
+								<section class="wrapper style3 special">
+								<h3>Day4</h3>
+                                    <ul>
+                                      <li> 松原民宿</li>
+                                      <li> 吉卜力公園(10:00大倉庫)</li>
+                                      <li> 榮商圈</li>
+								    </ul>
+								</section>
+								<h3>Day5</h3>
+                                    <ul>
+                                      <li> 松原民宿</li>
+                                      <li> 名古屋港水族館</li>
+									  <ul>
+										<li>南極觀測船、名古屋港大樓展望室以及海洋博物館，於 2026年8月1日至11月30日期間暫停對外開放</li>
+									  </ul>
+                                      <li> 名古屋車站商圈</li>
+								    </ul>
+								<section class="wrapper style3 special">
+								<h3>Day6</h3>
+                                    <ul>
+                                      <li> 松原民宿</li>
+                                      <li> 大高綠地(恐龍探險區、恐龍滑梯)</li>
+                                      <li> 熱高神官(可選)</li>
+									  <li> 白鳥庭園-觀楓夜間點燈</li>
+									  <li> 榮商圈</li>
+								    </ul>
+								</section>
+								<h3>Day7</h3>
+                                    <ul>
+                                      <li> 松原民宿</li>
+                                      <li> 東山動植物園</li>
+									  <li> 榮商圈</li>
+								    </ul>
+								<section class="wrapper style3 special">
+								<h3>Day8</h3>
+                                    <ul>
+                                      <li> 松原民宿</li>
+                                      <li> 常滑-永旺夢樂城</li>
+                                      <li> 波音博物館</li>
+									  <li> 日本時間21:15 回程飛機</li>
+									  <li> 台灣時間23:50 落地</li>
+								    </ul>
+								</section>
 							</div>
 						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-					</section>
+
 
 				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
+					<section id="three" class="wrapper style3 special" style="display: none;">
 						<div class="inner">
 							<header class="major">
 								<h2>Accumsan mus tortor nunc aliquet</h2>
@@ -153,7 +256,7 @@
 					</section>
 
 				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
+					<section id="cta" class="wrapper style4" style="display: none;">
 						<div class="inner">
 							<header>
 								<h2>Arcue ut vel commodo</h2>
@@ -167,7 +270,7 @@
 					</section>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<footer id="footer" style="display: none;">
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
